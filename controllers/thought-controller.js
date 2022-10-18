@@ -7,7 +7,6 @@ const thoughtControllers = {
         path: 'reactions',
         select: '-__v'
       })
-      .select('-__v')
       .then(dbThoughtData => {
         res.json(dbThoughtData)
       })
@@ -23,7 +22,6 @@ const thoughtControllers = {
         path: 'reactions',
         select: '-__v'
       })
-      .select('-__v')
       .then(dbThoughtData => {
         if(!dbThoughtData) {
           res.status(404).json({ message: 'No thought found at this id' });
@@ -56,7 +54,7 @@ const thoughtControllers = {
       .then(({ username, _id }) => {
         return User.findByIdAndUpdate(
           { username: username },
-          { $push: { thought: _id } },
+          { $push: { thoughts: _id } },
           { new: true, runValidators: true }
         )
       })
@@ -77,7 +75,7 @@ const thoughtControllers = {
       .then(({ username }) => {
         return User.findOneAndUpdate(
           { username: username },
-          { $pull: { thought: params.id} },
+          { $pull: { thoughts: params.id} },
           { new: true } 
         )
       })
@@ -114,7 +112,9 @@ const thoughtControllers = {
   removeReaction({ params }, res) {
     Thought.findByIdAndUpdate(
       { _id: params.thoughtId },
-      { $pull: { reactions: body } },
+      { $pull: { reactions: {
+        reactionId: params.reactionId
+      } } },
       { new: true, runValidators: true }
     )
       .then((dbThoughtData) => {

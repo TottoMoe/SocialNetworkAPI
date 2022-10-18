@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const espress = require("express");
+const express = require("express");
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -10,13 +10,10 @@ app.use(express.static("public"));
 
 app.use(require("./routes"));
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/socialize", {
-  userFindAndModify: false,
-  usernewUrlParser: true,
-  userUnifiedTopology: true,
-  userCreateIndex: true,
-});
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/socialize");
 
 mongoose.set("debug", true);
 
-app.listen(PORT, () => console.log(`Connected to localhost: ${PORT}`));
+mongoose.connection.once("open", () => {
+  app.listen(PORT, () => console.log(`Connected to localhost: ${PORT}`));
+})
