@@ -33,7 +33,7 @@ The user should clone the repository from GitHub and download Node.js. This appl
 
 ## Usage Information
 
-- If you would like to view a video on walkthrougth the application demonstrating, please go to my [Usage Video](https://drive.google.com/file/d/1trtRJW92SwRwxESsmI-Y8FzvJawAuSw9/view)
+- If you would like to view a video on walkthrougth the application demonstrating, please go to my [Usage Video](https://drive.google.com/file/d/1bP6JR2H7vEN2iMqOTMKtOulUTPMW0jO9/view)
 
 ---
 
@@ -43,20 +43,27 @@ The user should clone the repository from GitHub and download Node.js. This appl
  You can create, read, update, and delete users and thoughts, and add and delete reactions and friends using these urls:
 
 http://localhost:3001/api/user
+
 http://localhost:3001/api/user/:id (required to delete, update, or just to read one category)
 To post a user - JSON being sent will be this: { "username": "username", "email": "email@example.com" }
+
 http://localhost:3001/api/user/:userId/friends/:friendsId (required to delete and add a friend)
+
 http://localhost:3001/api/thoughts
 To create a thought - JSON being send will be formated like this: { "thoughtText": "This is an example thought", "username": "username of person creating the thought" }
+
 http://localhost:3001/api/thoughts/:id (required to delete, update, or just to read one tag)
+
 http://localhost:3001/api/thougts/:thoughtsId/reactions (required to add a reaction to a thought)
 To create a reaction - JSON being send will be formated like this: { "reactionBody": "This is an example reaction", "username": "username of person creating the reaction" }
+
 http://localhost:3001/api/thoughts/:thoughtsId/reactions/:reactionsId (required to delete a reaction from a thought)
 
-![Screen-Shot](./ScreenShot1%20.png)
-![Screen-Shot](./ScreenShot2.png)
-![Screen-Shot](./ScreenShot3.png)
-![Screen-Shot](./ScreenShot4.png)
+![Screen-Shot](./Assets/getAllUsers.png)
+![Screen-Shot](./Assets/getAllThought.png)
+![Screen-Shot](./Assets/getThoughtbyId.png)
+![Screen-Shot](./Assets/AddReaction.png)
+![Screen-Shot](./Assets/deleteReaction.png)
 
 <a name="questions"></a>
 
