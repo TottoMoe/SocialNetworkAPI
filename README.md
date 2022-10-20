@@ -33,7 +33,7 @@ The user should clone the repository from GitHub and download Node.js. This appl
 
 ## Usage Information
 
-- If you would like to view a video on walkthrougth the application demonstrating, please go to my [Usage Video](https://drive.google.com/file/d/1bP6JR2H7vEN2iMqOTMKtOulUTPMW0jO9/view)
+- If you would like to view a video on walkthrougth the application demonstrating, please go to my [Demo Video](https://drive.google.com/file/d/1bP6JR2H7vEN2iMqOTMKtOulUTPMW0jO9/view)
 
 ---
 
